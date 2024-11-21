@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-# Reciclaje Electronico T2
+# Reciclaje Electronico 
 
 Proyecto aplicación web, curso Desarrollo de Aplicaciones Web CC5002.
 
@@ -59,4 +58,4 @@ Para los gráficos me base en el código del auxiliar 8, tome el código, lo cop
 =======
 # Web
 Tarea semestral del ramo "Desarrollo de Aplicaiones Web" CC5002-1, página web para donar dispositivos electrónicos.
->>>>>>> b4e3ef8b1f3e3d37de449723a161378827d02805
+
