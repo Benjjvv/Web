@@ -55,7 +55,5 @@ Los comentarios de cada dispositivo ahora se guardan en la base de datos, con un
 ### AJAX y Gráficos
 
 Para los gráficos me base en el código del auxiliar 8, tome el código, lo copie aqui y fui cambiando las cosas para que funcionara con mis datos.
-=======
-# Web
-Tarea semestral del ramo "Desarrollo de Aplicaiones Web" CC5002-1, página web para donar dispositivos electrónicos.
+
 
