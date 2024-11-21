@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block css %}
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/stats.css') }}"
+    />
+{% endblock %}
+
+{% block content %}    
+<div class="stats-container">
+    <figure class="highcharts-figure">
+        <div id="donaciones"></div>
+        <p class="highcharts-description">
+            Este gráfico presenta los contactos por comuna.
+        </p>
+    </figure>
+    
+    <figure class="highcharts-figure">
+        <div id="dispositivos"></div>
+        <p class="highcharts-description">
+            Este gráfico presenta los tipos de dispositivos.
+        </p>
+    </figure>
+</div>
+{% endblock content %}
+
+{% block javascript %}
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="{{url_for('static', filename='js/stats.js')}}"></script>
+{% endblock %}

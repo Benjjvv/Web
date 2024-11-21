@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block css %}
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/index.css') }}"
+    />
+{% endblock %}
+
+{% block content %}   
+    <!-- menu -->
+    <div class="home-section">
+        <div class="home-content">
+            <h1>RECICLA TUS DISPOSITIVOS</h1>
+            <h2>CON WEBBI-E</h2>
+            <p>Recibimos cualquier tipo de dispositivos electrónicos.</p>
+            <p>Puedes revisar el listado de dispositivos donados para su reciclaje.</p>
+            <div class="button">
+              <a href="{{ url_for('agregar_donacion') }}" class="dona-btn">DONA</a>
+              <a href="{{ url_for('ver_dispositivos') }}" class="listado-btn">LISTADO</a>
+              <a href="{{ url_for('stats') }}" class="stats-btn">STATS</a>
+            </div>        
+        </div>
+        <div class="home-image">
+            <img src="{{ url_for('static', filename='img/robot1.png') }}" alt="Imagen">
+        </div>
+    </div>
+{% endblock content %}
+</html> 

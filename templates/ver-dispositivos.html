@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block title %}Reciclaje Electrónico{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/tabla.css') }}" />
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Listado de Dispositivos Donados</h1>
+    <table id="tabla-dispositivos" class="tabla-dispositivos">
+        <thead>
+            <tr>
+                <th>Tipo</th>
+                <th>Nombre Dispositivo</th>
+                <th>Estado</th>
+                <th>Comuna</th>
+                <th>Fotos</th>
+                <th>Detalles</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for dispositivo in dispositivos %}
+            <tr data-id="{{ dispositivo[0] }}">
+                <td>{{ dispositivo[4] }}</td> <!-- Tipo -->
+                <td>{{ dispositivo[2] }}</td> <!-- Nombre -->
+                <td>{{ dispositivo[6] }}</td> <!-- Estado -->
+                <td>{{ dispositivo[7] }}</td> <!-- Nombre de Comuna -->
+                <td>
+                    {% if dispositivo[8] %}
+                    <img src="{{ url_for('static', filename=dispositivo[8]) }}" alt="Dispositivo {{ dispositivo[0] }}" class="imagen-tabla">                  
+                    {% else %}
+                        <p>Sin imagen</p>
+                    {% endif %}
+                </td>
+                <td>
+                    <a href="{{ url_for('informacion_dispositivo', dispositivo_id=dispositivo[0]) }}">
+                        Ver detalles
+                    </a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    <!-- Paginador -->
+    <div class="paginas">
+        {% if current_page > 1 %}
+            <a href="{{ url_for('ver_dispositivos', page=current_page - 1) }}">&laquo; Anterior</a>
+        {% endif %}
+    
+        {% for page_num in range(1, total_paginas + 1) %}
+            {% if page_num == current_page %}   
+                <strong>{{ page_num }}</strong>
+            {% else %}
+                <a href="{{ url_for('ver_dispositivos', page=page_num) }}">{{ page_num }}</a>
+            {% endif %}
+        {% endfor %}
+    
+        {% if  total_paginas > current_page %}
+            <a href="{{ url_for('ver_dispositivos', page=current_page + 1) }}">Siguiente &raquo;</a>
+        {% endif %}
+    </div>   
+</div>
+{% endblock %}
+
+{% block javascript %}
+
+<script src="{{ url_for('static', filename='js/goToInfo.js') }}"></script>
+{% endblock %}

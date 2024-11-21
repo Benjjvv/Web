@@ -1,0 +1,98 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.home-section {
+    width: 80%;
+    max-width: 1250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    margin-top: 25px; 
+}
+
+.home-content {
+    max-width: 50%;
+    text-align: left;
+}
+
+.home-content h1 {
+    font-size: 3em;
+    margin: 0;
+    color: #000; 
+}
+
+.home-content h2 {
+    font-size: 2.7em;
+    margin: 10px 0;
+    color: #1b6a82;
+}
+
+.home-content p {
+    font-size: 1.5em;
+    margin: 20px 0;
+    color: #000; 
+}
+
+.home-content .button {
+    display: flex; 
+    justify-content: center; 
+    gap: 30px; 
+    font-weight: 550;
+}
+
+.home-content .dona-btn {
+    padding: 18px 32px;
+    background-color: #169dc6;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 18px;
+    border-radius: 20px; 
+    text-align: center;
+    width: 150px;
+}
+
+.home-content .listado-btn {
+    padding: 18px 32px;
+    background-color: #169dc6;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 18px;
+    border-radius: 20px; 
+    text-align: center;
+    width: 150px;
+}
+
+.home-content .stats-btn {
+    padding: 18px 32px;
+    background-color: #169dc6;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 18px;
+    border-radius: 20px; 
+    text-align: center;
+    width: 150px;
+}
+
+.home-content .button a:hover {
+    transform : scale(1.1);
+} 
+
+.home-image {
+    max-width: 40%;
+    text-align: center;
+}
+
+.home-image img {
+    width: 100%;
+    height: auto;
+}

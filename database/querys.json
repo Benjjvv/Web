@@ -1,0 +1,25 @@
+
+{ 
+
+"create_contact": "INSERT INTO contacto (nombre, email, celular, comuna_id, fecha_creacion) VALUES (%s, %s, %s, %s, %s);",
+"create_arch": "INSERT INTO archivo (ruta_archivo, nombre_archivo, dispositivo_id) VALUES (%s,%s,%s);",
+"create_disp": "INSERT INTO dispositivo (contacto_id, nombre, descripcion, tipo, anos_uso, estado) VALUES (%s,%s,%s,%s,%s,%s);",
+"add_comentario": "INSERT INTO comentario (dispositivo_id, nombre, texto, fecha) VALUES (%s, %s, %s, %s)",
+
+"get_contact_by_order": "SELECT id, nombre, email, celular, comuna_id, fecha_creacion FROM contacto ORDER BY id DESC;",
+"get_dips_by_contact": "SELECT id, contacto_id, nombre, descripcion, tipo, anos_uso, estado FROM dispositivo WHERE contacto_id=%s;",
+"get_arch": "SELECT id, ruta_archivo, nombre_archivo FROM archivo WHERE dispositivo_id=%s;",
+"get_comuna_id": "SELECT comuna_id FROM contacto WHERE id = %s",
+"get_comuna_name": "SELECT nombre FROM comuna WHERE id = %s",
+"get_tipo": "SELECT tipo FROM dispositivo WHERE id = %s",
+"get_ruta_arch": "SELECT ruta_archivo FROM archivo WHERE dispositivo_id = %s LIMIT 1",
+"get_infoDisp": "SELECT d.id, d.nombre, d.descripcion, d.tipo, d.anos_uso, d.estado, c.nombre as contacto_nombre, c.email as contacto_email, c.celular as contacto_telefono, co.nombre as comuna_nombre, a.ruta_archivo FROM dispositivo d JOIN contacto c ON d.contacto_id = c.id JOIN comuna co ON c.comuna_id = co.id LEFT JOIN archivo a ON d.id = a.dispositivo_id WHERE d.id = %s",
+"get_coment_disp": "SELECT id, nombre, texto, fecha FROM comentario WHERE dispositivo_id = %s ORDER BY fecha DESC",
+
+"list_five_disp": "SELECT id, contacto_id, nombre, descripcion, tipo, anos_uso, estado FROM dispositivo ORDER BY id DESC LIMIT 0, 5;",
+
+"next_five": "SELECT id, contacto_id, nombre, descripcion, tipo, anos_uso, estado FROM dispositivo ORDER BY id DESC LIMIT 5, 5;",
+"next_five_C": "SELECT id, contacto_id, COM.nombre, nombre, descripcion, tipo, anos_uso, estado FROM dispositivo, contacto CO, comuna COM WHERE contacto_id=CO.id AND CO.comuna_id=COM.id ORDER BY id DESC LIMIT 5, 5;"
+
+
+}
